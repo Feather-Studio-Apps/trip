@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Trip.</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F6F3EE;
+      --surface: #FDFBF8;
+      --border: #E5E0D8;
+      --border-muted: #EDE9E3;
+      --accent: #2C6E49;
+      --text-primary: #1A1A1A;
+      --text-secondary: #5A5248;
+      --text-muted: #9A8F84;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--cream);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+    .brand {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .page-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .meta {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+    .contact-card {
+      background: var(--accent);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 40px;
+      color: white;
+    }
+    .contact-card h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: white;
+    }
+    .contact-card p {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 16px;
+      color: white;
+      line-height: 1.6;
+    }
+    .contact-card a {
+      display: inline-block;
+      background: white;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .contact-card a:hover { opacity: 0.9; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 40px 0 12px 4px;
+    }
+    .faq-group {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .faq-item { border-bottom: 0.5px solid var(--border-muted); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+    .faq-q:hover { background: var(--cream); }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      position: relative;
+      color: var(--text-muted);
+    }
+    .faq-icon::before,
+    .faq-icon::after {
+      content: '';
+      position: absolute;
+      background: currentColor;
+      border-radius: 2px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .faq-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .faq-icon::after { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .faq-item.open .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+    .faq-a {
+      display: none;
+      padding: 0 20px 16px;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-a { display: block; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .footer a { color: var(--text-muted); }
+    .footer a:hover { color: var(--accent); }
+    @media (max-width: 480px) {
+      .wrap { padding: 40px 20px 80px; }
+      .page-title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">Trip.</div>
+    <h1 class="page-title">Support</h1>
+    <p class="meta">Developed by Daren Irlen / Feather Studio &nbsp;·&nbsp; Toronto, Canada</p>
+
+    <div class="contact-card">
+      <h2>Get in touch</h2>
+      <p>Have a question, found a bug, or have a feature request? Send us an email — we read every message and typically respond within 1–2 business days.</p>
+      <a href="mailto:featherstudio@proton.me">featherstudio@proton.me</a>
+    </div>
+
+    <p class="section-label">Getting Started</p>
+    <div class="faq-group">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">What is Trip.? <span class="faq-icon"></span></button>
+        <div class="faq-a">Trip. is a personal travel companion app. You can plan upcoming trips, save dream destinations, track places to visit, log expenses, and build a photo journal — all in one place, stored privately on your device.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">How do I create my first trip? <span class="faq-icon"></span></button>
+        <div class="faq-a">Tap the + button on the Home screen. Give your trip a name, add a destination, set your dates, and you're ready to go. You can always edit the details later.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">What's the difference between a Trip and a Dream? <span class="faq-icon"></span></button>
+        <div class="faq-a">A Trip has a confirmed plan — dates, budget, places to visit. A Dream is a destination you want to visit someday, without fixed dates. Dreams live on the Dreams tab and can be converted to a full trip when you're ready to plan.</div>
+      </div>
+    </div>
+
+    <p class="section-label">Trips & Planning</p>
+    <div class="faq-group">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">How do I add places to visit? <span class="faq-icon"></span></button>
+        <div class="faq-a">Open a trip and go to the Places tab. Tap + to search for a place by name. You can add notes, an address, and photos to each place, and mark it as visited once you've been.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">How does the budget tracker work? <span class="faq-icon"></span></button>
+        <div class="faq-a">In the Budget tab of any trip, you can log expenses by category (food, transport, accommodation, etc.) in any currency. Trip. will convert everything to your base currency using the exchange rates you set.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">What is the Prep tab for? <span class="faq-icon"></span></button>
+        <div class="faq-a">Prep is your pre-trip checklist and packing list. Add items manually or apply a template you've created in Profile → Prep templates. Check items off as you go.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">Can a trip have multiple destinations? <span class="faq-icon"></span></button>
+        <div class="faq-a">Yes. When creating or editing a trip, tap Add destination to add as many cities as you like.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">How do I change my trip's cover photo? <span class="faq-icon"></span></button>
+        <div class="faq-a">Open the trip and tap the edit icon in the top right. Scroll to the cover photo section and search for a photo by destination name. Swipe through the results and tap Confirm to set your cover.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">How do I favourite a place? <span class="faq-icon"></span></button>
+        <div class="faq-a">In the Places tab of any trip, tap the heart icon on any place row to favourite it. Use the Favourites filter at the top of the Places tab to see all your favourited places.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">How does multi-currency work? <span class="faq-icon"></span></button>
+        <div class="faq-a">When adding expenses, you can log amounts in any currency. In the trip's edit screen, set exchange rates for each currency relative to your trip's base currency. Trip. will use those rates to convert all expenses into a single total.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">When does a trip move to Memories? <span class="faq-icon"></span></button>
+        <div class="faq-a">Once your trip's end date has passed, Trip. will automatically move it to Memories within 24 hours. You'll find it under the Trips tab in Memories, where you can still browse all its places, photos, and expenses.</div>
+      </div>
+    </div>
+
+    <p class="section-label">Dreams</p>
+    <div class="faq-group">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">How do I save a Dream destination? <span class="faq-icon"></span></button>
+        <div class="faq-a">Tap the Dreams tab, then the + button. Dreams work like trips — you can add places, an inspiration board, and a rough budget estimate — without needing fixed dates.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">Can I convert a Dream into a Trip? <span class="faq-icon"></span></button>
+        <div class="faq-a">Yes. Open the Dream and tap Ready to plan? at the bottom of the Overview tab. Your places, budget estimates, and inspiration will carry over to the new trip.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">What happens when I archive a Dream? <span class="faq-icon"></span></button>
+        <div class="faq-a">Archived dreams are moved to the bottom of your Dreams list, greyed out. They're not deleted — you can still open them and unarchive at any time.</div>
+      </div>
+    </div>
+
+    <p class="section-label">Photos & Journal</p>
+    <div class="faq-group">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">How do I add photos to my journal? <span class="faq-icon"></span></button>
+        <div class="faq-a">Open a trip, go to the Journal tab, and tap Add photos. You can take a new photo or pick one from your library. Add a caption and date to each photo.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">Can I add photos to specific places? <span class="faq-icon"></span></button>
+        <div class="faq-a">Yes. Open any place in your Places tab and scroll to the Photos section. Photos added there are linked to that place and will show the place name in your Memories album.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">Are photos stored on my device? <span class="faq-icon"></span></button>
+        <div class="faq-a">Yes. Photos are saved to your device's local storage and are never uploaded to any server. When you take a photo through Trip., it is also saved to your native Photos app as a backup.</div>
+      </div>
+    </div>
+
+    <p class="section-label">Memories</p>
+    <div class="faq-group">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">What is the Memories tab? <span class="faq-icon"></span></button>
+        <div class="faq-a">Memories is your archive of completed trips and their photos. Switch between Album view (a photo grid filtered by trip or city), Trips view (a list of past trips), and Map view (a world map of countries you've visited).</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">How does the world map work? <span class="faq-icon"></span></button>
+        <div class="faq-a">The Map tab in Memories shows a world map with every country you've visited highlighted in green. Tap a country to toggle it, or use the searchable list below the map. Your visited country count and percentage of the world is shown at the top.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">Why is my country not showing on the map? <span class="faq-icon"></span></button>
+        <div class="faq-a">The map uses standard geographic data that may not render very small island nations like the Maldives. You can still mark them as visited using the country list below the map — they'll be counted in your stats.</div>
+      </div>
+    </div>
+
+    <p class="section-label">Import & Export</p>
+    <div class="faq-group">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">How do I export a trip to share with someone? <span class="faq-icon"></span></button>
+        <div class="faq-a">Open a trip and tap the edit icon. Scroll down to Export trip and tap it. You can choose to include expenses and prep lists before exporting. The trip is saved as a .json file you can share via AirDrop, iMessage, or any file app.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">What's included in an exported trip? <span class="faq-icon"></span></button>
+        <div class="faq-a">The export includes all trip details, destinations, dates, places, notes, companions, and budget settings. Expenses and prep lists are optional. Photos are not included as they are stored locally on your device.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">How do I import a trip someone shared with me? <span class="faq-icon"></span></button>
+        <div class="faq-a">Tap + on the home screen to open New Trip, then scroll down and tap Import trip from file. Pick the .json file from your files app or AirDrop. You'll see a preview of the trip and can choose whether to include expenses and prep lists if they were exported.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">Will imported places be marked as visited? <span class="faq-icon"></span></button>
+        <div class="faq-a">No. All places are imported as unvisited regardless of their state in the original trip. This lets you use the imported trip as a fresh plan.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">What happens if I import the same trip twice? <span class="faq-icon"></span></button>
+        <div class="faq-a">Trip. will detect that a trip with the same name and dates already exists and warn you. You can choose to add it as a new copy or cancel the import.</div>
+      </div>
+    </div>
+
+    <p class="section-label">Data & Privacy</p>
+    <div class="faq-group">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">Where is my data stored? <span class="faq-icon"></span></button>
+        <div class="faq-a">All your data is stored locally on your device using iOS secure storage. Nothing is sent to external servers. Trip. works fully offline.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">How do I back up my data? <span class="faq-icon"></span></button>
+        <div class="faq-a">Go to Profile → Export data. This saves a JSON file containing all your trips, places, expenses, and settings. You can restore it at any time using Import data.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">Does Trip. use iCloud? <span class="faq-icon"></span></button>
+        <div class="faq-a">Yes, optionally. Trip. can sync your data across your Apple devices via iCloud when enabled in Profile → Preferences. App preferences and settings are stored locally only and are not synced.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">What does Delete all data remove? <span class="faq-icon"></span></button>
+        <div class="faq-a">It clears all trips, places, expenses, photos, and settings from the app. Photos saved to your native Photos app are not affected.</div>
+      </div>
+    </div>
+
+    <p class="section-label">Notifications</p>
+    <div class="faq-group">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">How do I enable notifications? <span class="faq-icon"></span></button>
+        <div class="faq-a">Go to Profile → Preferences and toggle on Notifications. Trip. will ask for permission the first time — tap Allow to confirm. You can turn them off at any time from the same toggle.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">What notifications does Trip. send? <span class="faq-icon"></span></button>
+        <div class="faq-a">Trip. sends three notifications per trip: a reminder 48 hours before your trip starts, a mid-trip nudge to capture your memories, and a notification on your last day letting you know your recap is ready.</div>
+      </div>
+    </div>
+
+    <p class="section-label">Templates</p>
+    <div class="faq-group">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">What are prep templates? <span class="faq-icon"></span></button>
+        <div class="faq-a">Templates let you save reusable checklists and packing lists. Create a template once in Profile → Prep templates, then apply it to any trip's Prep tab with one tap.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">Can I have separate templates for checklists and packing? <span class="faq-icon"></span></button>
+        <div class="faq-a">Yes. Checklist templates and packing list templates are managed separately so you can mix and match depending on the type of trip.</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>© 2026 Daren Irlen / Feather Studio. All rights reserved.</span>
+      <span>
+        <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="terms.html">Terms of Service</a>
+      </span>
+    </div>
+  </div>
+
+  <script>
+    function toggle(btn) {
+      const item = btn.closest('.faq-item');
+      item.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
